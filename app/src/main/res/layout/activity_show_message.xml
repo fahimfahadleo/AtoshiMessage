@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent"
+    tools:context=".showMessage">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:textColor="#fff"
+        android:background="@color/colorAccent"
+        android:textSize="@dimen/_25sdp"
+        android:id="@+id/title"
+        android:text="Atoshi Message"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/edtshape"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_4sdp"
+            android:id="@+id/typepassword"
+            android:inputType="textPassword"
+            android:hint="Password . . ."
+            android:padding="@dimen/_5sdp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:padding="@dimen/_8sdp"
+            android:id="@+id/showpassword"
+            android:src="@drawable/eye"
+            android:layout_gravity="center"
+            android:background="@color/red"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:padding="@dimen/_8sdp"
+            android:id="@+id/setpassword"
+            android:src="@drawable/check"
+            android:layout_gravity="center"
+            android:background="@color/red"/>
+
+
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@null"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
+        android:layout_weight="1"
+        android:id="@+id/listview"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:orientation="horizontal">
+        <EditText
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/edtshape"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_4sdp"
+            android:id="@+id/typemessage"
+            android:hint="Type a message ...."
+            android:padding="@dimen/_5sdp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/send"
+            android:layout_gravity="center"
+            android:background="#fff"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:padding="@dimen/_8sdp"
+            android:id="@+id/sendbutton"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
