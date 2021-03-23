@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">AtoshiMessage</string>
+    <string name="app_name">I Messenger</string>
+    <string name="null_value">null value</string>
 </resources>

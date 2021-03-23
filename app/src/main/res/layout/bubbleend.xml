@@ -19,7 +19,7 @@
         app:bl_arrowHeight="8dp"
         app:bl_arrowPosition="16dp"
         app:bl_cornersRadius="@dimen/_5sdp"
-        app:bl_bubbleColor="@color/colorPrimaryDark"
+        app:bl_bubbleColor="@color/blue_grey_900"
         app:bl_strokeColor="#000"
         app:bl_arrowWidth="8dp"
         app:bl_strokeWidth="2dp">

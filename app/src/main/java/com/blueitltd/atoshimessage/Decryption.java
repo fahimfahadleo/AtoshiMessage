@@ -3,11 +3,13 @@ package com.blueitltd.atoshimessage;
 import android.content.Context;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class Decryption {
     Context context;
@@ -28,6 +30,7 @@ public class Decryption {
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+            Log.e("dhukche","ekhane1");
             return "";
         }
     }
@@ -35,7 +38,7 @@ public class Decryption {
     /* access modifiers changed from: private */
     public String decryption(String a, String b) {
 
-
+        Log.e("body",b);
 
             String md5 = hashing(a, "MD5");
             String sha1 = hashing(a, "SHA-1");
@@ -43,13 +46,15 @@ public class Decryption {
             char[] sha1array = sha1.toCharArray();
             int[] mdintarray = new int[md5.length()];
             int[] sha1intarray = new int[sha1.length()];
-            byte[] decodeValue = null;
-            try {
-                decodeValue = Base64.decode(b, 0);
-            } catch (IllegalArgumentException e) {
-              //  Toast.makeText(context, "Invalid Input", Toast.LENGTH_SHORT).show();
+            StringBuilder something  = new StringBuilder();
+            char [] mainstr = b.toCharArray();
+            for(int i = 0;i<mainstr.length;i++){
+                something.append(mainstr[i]).append(" ");
             }
-            String[] hati = new String(decodeValue).split(" ");
+
+            String[] hati = something.toString().split(" ");
+
+
             for (int i = 0; i < mdarray.length; i++) {
                 mdintarray[i] = mdarray[i];
             }
@@ -66,16 +71,18 @@ public class Decryption {
                     k = 0;
                 }
                 try{
-                    hati[i3] = Character.toString((char) ((Integer.parseInt(hati[i3]) - mdintarray[j]) - sha1intarray[k]));
+                    hati[i3] = Character.toString((char) (((int)(hati[i3].charAt(0)) - mdintarray[j]) - sha1intarray[k]));
                     j++;
                     k++;
                 }catch (NumberFormatException e){
                     // Toast.makeText(context,"Invalid Input",Toast.LENGTH_SHORT).show();
+                    Log.e("dhukche","ekhane2");
                      return "";
                 }
 
             }
             if (hati.length == 0) {
+                Log.e("dhukche","ekhane3");
                 return "";
             }
             StringBuffer sb = new StringBuffer();
@@ -88,5 +95,4 @@ public class Decryption {
 
 
     }
-
 }

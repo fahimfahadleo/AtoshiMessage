@@ -1,6 +1,7 @@
 package com.blueitltd.atoshimessage;
 
 import android.util.Base64;
+import android.util.Log;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -51,8 +52,15 @@ public class Encryption {
             }
             AsImplodedString = sb.toString();
         }
-        String str = new String(Base64.encode(AsImplodedString.getBytes(), 0));
-        return str;
+
+        Log.e("rawstr",AsImplodedString);
+
+
+
+
+
+
+        return AsImplodedString;
     }
 
     public String hashing(String s, String mat) {
